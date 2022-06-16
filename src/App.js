@@ -6,6 +6,7 @@ import useStlyes from './styles'
 import {useDispatch} from 'react-redux'
 import { useEffect, useState} from 'react';
 import { getPosts } from './actions/posts'
+
 function App() {
 
   const [currentId, setCurrentId] = useState(null)

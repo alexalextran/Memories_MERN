@@ -5,11 +5,13 @@ import useStlyes from './styles'
 import { useSelector } from 'react-redux'
 const Posts = ({setCurrentId}) => {
     const posts = useSelector((state) => state.posts);
+    const loading = useSelector((state) => state.loading);
  const classes = useStlyes();
 
+console.log(loading)
 
     return (
-      !posts.length ? <CircularProgress /> : (
+      loading ? <CircularProgress /> : (
         <Grid className={classes.container} container alignItems='stretch' spacing = {3}>
             {
                 posts.map((post) => (

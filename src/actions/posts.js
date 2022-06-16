@@ -5,9 +5,11 @@ import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
 export const getPosts = () => async (dispatch) => {
 
     try{
+        dispatch({type: "LOADING"})
         const {data} = await api.fetchPosts();
 
         dispatch({type: FETCH_ALL, payload: data})
+        dispatch({type: "NOTLOADING"})
     } catch(error){
         console.log(error)
     }
@@ -17,8 +19,10 @@ export const getPosts = () => async (dispatch) => {
 
 export const createPost = (post) => async (dispatch) => {
     try{
+        dispatch({type: "LOADING"})
         const {data} = await api.createPost(post)
         dispatch({type: CREATE, payload: data})
+        dispatch({type: "NOTLOADING"})
     } catch (error){
 
     }
