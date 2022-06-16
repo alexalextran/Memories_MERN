@@ -1,4 +1,4 @@
-export default (loading = false, action) => {
+const loading = (loading = false, action) => {
     switch(action.type){
         case 'LOADING':
             loading = true
@@ -10,3 +10,4 @@ export default (loading = false, action) => {
             return loading;
     }
 }
+export default loading
