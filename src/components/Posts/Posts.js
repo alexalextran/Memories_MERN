@@ -8,7 +8,7 @@ const Posts = ({setCurrentId}) => {
     const loading = useSelector((state) => state.loading);
  const classes = useStlyes();
 
-console.log(loading)
+
 
     return (
       loading ? <CircularProgress /> : (
